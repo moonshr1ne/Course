@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Welcome, {{ user.username }}!</h2>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4>Statistics</h4>
+      <ul class="list-group">
+        <li class="list-group-item">MMR: {{ user.mmr }}</li>
+        <li class="list-group-item">Matches played: {{ total_matches }}</li>
+        <li class="list-group-item">Winrate: {{ winrate }}</li>
+      </ul>
+      <hr>
+      {% if bots and bots|length > 0 %}
+    <h5>Your Uploaded Bot{{ 's' if bots|length > 1 else '' }}:</h5>
+    <ul class="list-group mb-3">
+      {% for bot in bots %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          {{ bot.filename }}
+          <span class="badge bg-secondary">{{ bot.uploaded_at.strftime("%Y-%m-%d %H:%M") }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form action="{{ url_for('upload_bot') }}" method="post" enctype="multipart/form-data">
+    <h5>{{ 'Upload Another Bot' if bots else 'Upload Your Bot' }}:</h5>
+    <input type="file" name="botfile" accept=".py" class="form-control mb-2">
+    <!-- В profile.html -->
+<!-- В profile.html -->
+<button class="btn btn-success w-100 mb-2">Upload</button>
+
+
+  </form>
+    </div>
+    <div class="col-md-8">
+      <h4>Match History</h4>
+      <!-- сюда можно вставить таблицу истории матчей -->
+    </div>
+  </div>
+
+<div class="d-grid mb-3">
+  <form action="{{ url_for('battle') }}" method="post" style="display:inline">
+  <button type="submit"
+          class="btn btn-primary btn-lg"
+          style="width:32%; height:120px;">
+    Start Battle
+  </button>
+</div>
+
+
+
+
+
+{% endblock %}

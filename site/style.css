@@ -1,0 +1,149 @@
+/* -------------------------------------------------------------
+   Основной стиль. Убрали чёрный фон у .game-container,
+   подогнали высоту под canvas 1000×700.
+------------------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+html {
+  background: #121212;
+}
+
+body {
+  background: transparent;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header-container {
+  position: relative;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Main */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: transparent;
+}
+
+/* Game Container */
+.game-container {
+  display: block;           /* чтобы canvas был видим */
+  width: 100%;
+  height: 700px;            /* canvas 1000×700 */
+  margin: 20px auto;
+  position: relative;
+  background: transparent;   /* убрали чёрный фон */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Контролы (кнопки) */
+.control-panel {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.control-panel button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.control-panel button:hover {
+  background: #f0f0f0;
+}
+
+/* Footer */
+footer {
+  background: #1a1a2e;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer p {
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #0088cc;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00a0e0;
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  .game-container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  .game-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .game-container {
+    height: 300px;
+  }
+}

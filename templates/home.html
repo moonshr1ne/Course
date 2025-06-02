@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}League of Stickmans – Home{% endblock %}
+
+{% block content %}
+<div class="home">
+  <h1 class="title">League&nbsp;of&nbsp;Stickmans</h1>
+
+  {% if session.get('user') %}
+    <p class="welcome">Welcome, <strong>{{ session['user'] }}</strong>!</p>
+    <form method="post" action="{{ url_for('logout') }}">
+      <button type="submit">Log&nbsp;out</button>
+    </form>
+  {% else %}
+    <section class="login">
+      <h2>Login</h2>
+      <form action="{{ url_for('login') }}" method="post">
+        <input name="username" placeholder="Username" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <button type="submit">Sign&nbsp;in</button>
+      </form>
+    </section>
+  {% endif %}
+
+  <section class="leaderboard">
+    <h2>Leaderboard</h2>
+    <table>
+      <thead><tr><th>#</th><th>Player</th><th>MMR</th></tr></thead>
+      <tbody>
+        {% for u in top_users %}
+        <tr><td>{{ loop.index }}</td><td>{{ u.username }}</td><td>{{ u.mmr }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <a class="upload-link" href="{{ url_for('submit_bot') }}">Submit your bot →</a>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+body{background:#111}
+canvas{background:#222}
+/* В вашем основном <style> или в отдельном CSS-файле */
+.custom-btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  min-width: 356px;
+}

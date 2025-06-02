@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Upload Bot – League of Stickmans{% endblock %}
+
+{% block content %}
+<div class="bot-upload">
+  <h1>Upload your bot</h1>
+  <form action="{{ url_for('submit_bot') }}" method="post" enctype="multipart/form-data">
+    <input name="bot_name" placeholder="Bot name" required>
+    <input type="file" name="bot_file" accept=".py" required>
+    <button type="submit">Submit</button>
+  </form>
+  <p><a href="{{ url_for('index') }}">← Back home</a></p>
+</div>
+{% endblock %}

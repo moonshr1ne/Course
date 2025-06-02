@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <h2 class="mb-4 text-center">Login or Register</h2>
+      <form method="post" class="mb-5">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text"
+                 class="form-control"
+                 id="username"
+                 name="username"
+                 required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password"
+                 class="form-control"
+                 id="password"
+                 name="password"
+                 required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+      </form>
+
+      <h3 class="mb-3 text-center">Leaderboard</h3>
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">MMR</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <th scope="row">{{ loop.index }}</th>
+            <td>{{ user.username }}</td>
+            <td>{{ user.mmr }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

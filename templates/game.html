@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2 class="mb-3">Live Battle</h2>
+
+  <div id="gameContainer" class="canvas-box mx-auto"></div>
+
+  <div class="text-center mt-3">
+    <button id="btnStart" class="btn btn-success btn-sm me-2">Start</button>
+    <button id="btnStop"  class="btn btn-warning btn-sm me-2">Stop</button>
+    <button id="btnReset" class="btn btn-danger btn-sm">Reset</button>
+  </div>
+
+  <h4 class="text-center mt-2">
+    Green Army $<span id="moneyG">0</span>
+    <span class="mx-3">Turn <span id="turnN">0</span></span>
+    Red Army $<span id="moneyR">0</span>
+  </h4>
+
+  <!-- inject your engine-blueprint endpoints -->
+  <script>
+  window.RESET_URL = "/api/reset";
+  window.STEP_URL  = "/api/step";
+  window.STATE_URL = "/api/state";
+</script>
+
+
+  <script src="{{ url_for('static', filename='game.js') }}"></script>
+{% endblock %}
+{% block scripts %}{% endblock %}

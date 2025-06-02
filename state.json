@@ -1,0 +1,40 @@
+{
+  "turn": 1,
+  "nodes": {
+    "main_base_1": {
+      "owner": "player1"
+    },
+    "main_base_2": {
+      "owner": "player2"
+    },
+    "proxy_base_1": {
+      "owner": null
+    },
+    "proxy_base_2": {
+      "owner": null
+    },
+    "camp_1": {
+      "owner": "player1"
+    },
+    "camp_2": {
+      "owner": "player2"
+    }
+  },
+  "units": [
+    {
+      "unit_type": "archers",
+      "owner": "player1",
+      "position": "main_base_1"
+    },
+    {
+      "unit_type": "swordsmen",
+      "owner": "player1",
+      "position": "camp_1"
+    },
+    {
+      "unit_type": "cavalry",
+      "owner": "player2",
+      "position": "main_base_2"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>League of Stickmans — Live Mode</title>
+  <!-- Подключаем обновлённый style.css -->
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <!-- Градиентный текст внутри тёмно-синего фона -->
+  <div class="header-container">
+    <header>
+      <h1>LEAGUE OF STICKMANS — LIVE MODE</h1>
+    </header>
+  </div>
+
+  <main>
+    <!-- Панель управления -->
+    <div class="control-panel">
+      <button onclick="startLiveMode()">▶ Start Live</button>
+      <button onclick="stopLiveMode()">⏸ Stop</button>
+      <button onclick="resetLiveGame()">🔄 Reset</button>
+    </div>
+
+    <!-- Контейнер для canvas -->
+    <div class="game-container" id="gameContainer"></div>
+  </main>
+
+  <!-- Подключаем обновлённый game.js -->
+  <script src="/static/game.js"></script>
+</body>
+</html>
