@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stickman Game Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .control-panel {
+      text-align: center;
+      margin: 10px;
+    }
+    .control-panel button {
+      margin: 0 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <header>
+      <h1>LEAGUE OF STICKMANS — LIVE MODE</h1>
+    </header>
+  </div>
+
+  <main>
+    <div class="control-panel">
+      <button onclick="startLiveMode()">▶ Start Live</button>
+      <button onclick="stopLiveMode()">⏸ Stop</button>
+      <button onclick="resetLiveGame()">⟳ Reset</button>
+    </div>
+    <div class="game-container" id="gameContainer"></div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

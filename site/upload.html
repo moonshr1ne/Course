@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Bots</title>
+</head>
+<body>
+  <h1>Upload Your Bots</h1>
+  <form action="http://localhost:5000/upload_bot" method="post" enctype="multipart/form-data">
+    Player 1 bot: <input type="file" name="bot1"><br><br>
+    Player 2 bot: <input type="file" name="bot2"><br><br>
+    <input type="submit" value="Upload Bots">
+  </form>
+  <br>
+  <button onclick="fetch('http://localhost:5000/reload_bots', {method: 'POST'}).then(r => r.json()).then(alert)">Reload Bots</button>
+</body>
+</html>
